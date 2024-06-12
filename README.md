@@ -14,3 +14,4 @@ and seamlessly redirects authenticated users to a specified page.
 - [FXML Tutorial](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/fxml_tutorial.htm) - A comprehensive tutorial on using FXML to define the layout of JavaFX applications.
 - [FXML Loader Documentation](https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/FXMLLoader.html) - Official documentation for the FXMLLoader class, used to load FXML files in JavaFX applications.
 - [JavaFX CSS Documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/doc-files/cssref.html) - Comprehensive documentation for styling JavaFX applications using CSS.
+![JAVA-FX-LOGIN-APP-6-12-2024](https://github.com/1xProdifer/LoginAppJavafx/assets/170844817/4eac1767-47e7-4926-9673-a27f05c5e8b1)
