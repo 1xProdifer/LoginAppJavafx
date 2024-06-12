@@ -1,0 +1,5 @@
+<?import javafx.scene.web.WebView?>
+
+<WebView fx:id="webView"
+         xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="controller.RedirectController" />
