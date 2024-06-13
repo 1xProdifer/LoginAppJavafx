@@ -1,5 +1,9 @@
 package controller;
-
+/**
+ * @author Adhyan Chandhoke
+ * Date 11/06/2024
+ * This class is a controller for redirecting the screen to the github profile.
+ */
 import javafx.fxml.FXML;
 import javafx.scene.web.WebView;
 
