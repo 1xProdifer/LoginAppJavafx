@@ -48,13 +48,14 @@ public class RegistrationController {
         String confirmPassword = confirmPasswordField.getText();
 
         // Check if passwords match
+        if (!password.isBlank() & !username.isBlank())
         if (password.equals(confirmPassword)) {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("users.txt", true))) {
                 // Write user credentials to file
                 writer.write(username + "," + password);
                 writer.newLine();
                 statusLabel.setText("Registration Successful ! --> Login...");
-                statusLabel.setStyle("-fx-text-fill: green;");
+                statusLabel.setStyle("-fx-text-fill: white;");
 
                 // Pause for 2 seconds before redirecting to login
                 new Thread(() -> {

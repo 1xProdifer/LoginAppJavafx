@@ -1,19 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" alignment="CENTER"
-      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.LoginController" style="-fx-padding: 20;">
-    <Label text="Login Page"
-           style="-fx-font-size: 30px; -fx-font-weight: bold;" />
-    <Label text="Username:" />
-    <TextField fx:id="usernameField" />
-    <Label text="Password:" />
-    <PasswordField fx:id="passwordField" />
-    <Button text="Login" onAction="#handleLoginButtonAction"
-            style="-fx-background-color: #2196F3; -fx-text-fill: white;" />
-    <Label fx:id="statusLabel" text="" style="-fx-text-fill: red;" />
+<VBox alignment="CENTER" spacing="10" style="-fx-padding: 20; -fx-background-color: #9932CC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+    <Label style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Login Page" textFill="#2196f3" />
+    <TextField fx:id="usernameField" alignment="CENTER" promptText="Username" />
+    <PasswordField fx:id="passwordField" alignment="CENTER" promptText="Password" />
+    <Button onAction="#handleLoginButtonAction" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Login" underline="true">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets></Button>
+    <Label fx:id="statusLabel" style="-fx-text-fill: red;" text="" />
 </VBox>

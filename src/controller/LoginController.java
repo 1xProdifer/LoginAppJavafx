@@ -1,4 +1,5 @@
 package controller;
+
 /**
  * @author Adhyan Chandhoke
  * Date 11/06/2024
@@ -9,11 +10,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -49,15 +51,22 @@ public class LoginController {
             // Read each line from the users.txt file
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                // Check if the username and password match
-                if (parts[0].equals(username) && parts[1].equals(password)) {
+                // Check if parts array has at least 2 elements before accessing them
+                if (parts.length >= 2 && parts[0].equals(username) && parts[1].equals(password)) {
                     found = true;
                     break;
                 }
             }
 
             if (found) {
-                loadRedirectPage(); // Redirect to the next page on successful login
+                // Display success message
+                statusLabel.setText("Login successful! Redirecting...");
+                statusLabel.setStyle("-fx-text-fill: white;");
+
+                // Pause for 2 seconds
+                PauseTransition pause = new PauseTransition(Duration.seconds(2));
+                pause.setOnFinished(e -> loadWebViewPage());
+                pause.play();
             } else {
                 statusLabel.setText("Incorrect username or password."); // Display error message
                 statusLabel.setStyle("-fx-text-fill: red;"); // Set text color to red
@@ -70,19 +79,23 @@ public class LoginController {
     }
 
     /**
-     * Loads the redirect page after successful login.
+     * Loads the web view page after successful login.
      */
-    private void loadRedirectPage() {
+    private void loadWebViewPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/webview/RedirectPage.fxml"));
-            Parent redirectRoot = loader.load();
+            Parent webViewRoot = loader.load();
             Stage stage = (Stage) usernameField.getScene().getWindow();
-            stage.setScene(new Scene(redirectRoot, 800, 600));
-            stage.setTitle("Redirect Page");
+            stage.setScene(new Scene(webViewRoot, 800, 600));
+            stage.setTitle("GitHub");
             stage.show();
+
+            // Get the controller for the WebView page and load the GitHub URL
+            RedirectController controller = loader.getController();
+            controller.loadURL("https://github.com/1xProdifer");
         } catch (IOException e) {
             e.printStackTrace();
-            statusLabel.setText("Failed to load the redirect page."); // Display error message
+            statusLabel.setText("Failed to load the web view page."); // Display error message
             statusLabel.setStyle("-fx-text-fill: red;"); // Set text color to red
         }
     }
