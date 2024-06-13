@@ -5,6 +5,7 @@ to authenticate with their username and password, handles error messages for inc
 and seamlessly redirects authenticated users to a github portfolio🔥
 
 # Resources
+- [Friends] - Took help from soban for scene builder just to learn the basics and took help from varnan for file names
 - [BroCode](https://www.youtube.com/watch?v=wxhGKR3PQpo) - Youtube Video which helped me communicate between Controllers
 - [BroCode](https://www.youtube.com/watch?v=9XJicRt_FaI) - Helped me with most of my code
 - [CHATGPT] : Asked chatgpt to help me fix the documentation and make it look professional
